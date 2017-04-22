@@ -5,12 +5,15 @@ persist: true
 commands:
 
   node:
-    image: "node:7.7.4-alpine"
+    image: "node:7.9.0-alpine"
 
   yarn:
-    image: "node:7.7.4-alpine"
+    image: "node:7.9.0-alpine"
     container-command: "yarn"
 
   inode:
-    image: "node:7.7.4-alpine"
+    image: "node:7.9.0-alpine"
     container-command: "/bin/sh"
+
+  webpack:
+    image: "jmfirth/webpack:7"
