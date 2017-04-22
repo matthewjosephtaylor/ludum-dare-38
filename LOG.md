@@ -1,4 +1,19 @@
 #LOG
+2017-04-22T14:47:50-05:00
+- Looks like pixi.js is going to be easier to get something up quickly
+	- DnD not baked into in three.js from examples I'm seeing.
+	- bye-bye 3d (for now) :)
+
+
+
+2017-04-22T14:01:26-05:00
+- Got fswatch working, no more manual builds
+
+2017-04-22T12:47:46-05:00
+- Taken a moment to relax and refocus after battling with webpack
+- Finally ready to get started with the actual programming tasks. :)
+- First up: learn how to do basic rendered object->mouse manipulation in three.js (raycasting)
+
 2017-04-22T12:38:58-05:00
 - Wow. finally got a good working webpack. Holy fuck that was way harder than it needed to be.
 

@@ -13,5 +13,8 @@ jspm_packages/
 # Yarn Integrity file
 .yarn-integrity
 
-#Ignore dist
+# Ignore dist
 dist/
+
+# Go away .DS_Store nobody loves you
+.DS_Store

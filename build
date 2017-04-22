@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
-rm -rf ./dist
+rm -rf ./dist/*
+. .env
+echo "building...."
 webpack
+if [ $? -ne 0 ]; then
+        osascript -e "display alert \"Build Error\" message \"Something bad :( \""
+else
+        osascript -e "display notification \"Build finished\" with title \"webpack builder\""
+fi
+

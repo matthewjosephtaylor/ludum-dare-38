@@ -1,2 +1,2 @@
 #!/usr/bin/env sh
-docker run -it --rm -w="${PWD}" -e "HOME=${HOME}" -v "${PWD}:${PWD}"   "jmfirth/webpack:7" webpack $@
+docker run -i --rm -w="${PWD}" -e "HOME=${HOME}" -v "${PWD}:${PWD}"   "jmfirth/webpack:7" webpack $@
