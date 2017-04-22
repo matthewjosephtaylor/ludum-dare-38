@@ -33,7 +33,6 @@ Smallest path to x
  g h i 
 
 ```
-
 goals
 - shortest paths
 - multiple end nodes needed (balance between shortest direct paths and most efficient overall)

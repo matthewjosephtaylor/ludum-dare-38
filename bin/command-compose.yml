@@ -1,0 +1,16 @@
+name: "ludum-dare-38-bin"
+command-type: EXECUTABLE
+persist: true
+
+commands:
+
+  node:
+    image: "node:7.7.4-alpine"
+
+  yarn:
+    image: "node:7.7.4-alpine"
+    container-command: "yarn"
+
+  inode:
+    image: "node:7.7.4-alpine"
+    container-command: "/bin/sh"

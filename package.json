@@ -1,0 +1,10 @@
+{
+  "name": "ludum-dare-38",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "author": "https://twitter.com/matt_taylor",
+  "license": "MIT",
+  "devDependencies": {
+    "jshint": "^2.9.4"
+  }
+}
