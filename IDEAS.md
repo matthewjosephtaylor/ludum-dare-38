@@ -37,3 +37,11 @@ goals
 - shortest paths
 - multiple end nodes needed (balance between shortest direct paths and most efficient overall)
 - 
+
+
+## Kinds of connections
+- people
+  - facebook
+  - twitter
+  - google+
+  - imdb

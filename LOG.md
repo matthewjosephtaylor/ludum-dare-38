@@ -1,4 +1,53 @@
 #LOG
+2017-04-22T22:56:38-05:00
+- Going to call it a night.
+- I think the basic mechanics of the game are now worked out in my mind.
+- Tomorrow will be concentrating making a good user experience since the mechanics are straight-forward.
+	- squash the d-n-d 'mouse jump' bug
+	- make the drop slots 'click' into place
+	- highlight associations
+	- might need different avatar generator (think it is coming up with dupes)
+	- sounds would be neat
+	- points system
+	- generally make it more 'wow' :)
+
+2017-04-22T21:13:28-05:00
+- The academic paper on color inspired me to use faces!
+	- Perfectly fits with the theme.
+	- One of those 'well of course' brilliant moments that I was only able to get to by being randomly hit by it. Need to save this as an example of how 'inspiration' relates to randomly linking existing ideas.
+
+2017-04-22T20:55:56-05:00
+- Interesting problem color-palette size.
+	- Difficult to distinguish subtle color changes.
+	- Random palettes are right out :)
+	- Hopefully this will be a solved problem wrt maps and I can steal existing large-but-easily-to-distinguish pallets. To Google!
+
+2017-04-22T20:31:06-05:00
+- Interesting how the difficulty scales with regards to small changes in the number of blockValues.
+
+2017-04-22T20:02:59-05:00
+- Played my first game!
+	- all manual, just moving shapes around the playing area but finally got a sense of how the game will play
+
+2017-04-22T18:44:32-05:00
+- fighting with the mouse position on drag-n-drop (why is that always a challenge?)
+- Getting close to at least seeing what this game idea is going to look like.
+	- Will allow me to visually 'feel' the game which I think will help quite a bit.
+
+2017-04-22T17:20:49-05:00
+- Found an OK functional/stream library but it is a bit weak :(
+	- Glad I spent the time doing the research but disappointed with the outcome.
+- Making progress on the game. So far no roadblocks.
+
+2017-04-22T16:35:48-05:00
+- making good progress on pixi.js. Seems to be a reasonable library.
+- finding myself wanting a nice functional library so I can do maps and filters and stuff over a stream.
+
+2017-04-22T15:18:39-05:00
+- pixi.js tutorials here I come!
+- Plan is to not get too bogged down on learning pixi.js and focus on getting just enough to complete the game. In effect, practicing this style of minimal-learning is the 'real game' for me and more or less the point of participating in the ludum dare. 
+
+
 2017-04-22T14:47:50-05:00
 - Looks like pixi.js is going to be easier to get something up quickly
 	- DnD not baked into in three.js from examples I'm seeing.

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+
+for i in `seq 0 64`; do
+	if [ $(($i%2)) -eq 0 ];
+	then
+		sex="male";
+	else
+		sex="female";
+	fi
+	curl -o "img/${i}.png"  -XGET "http://eightbitavatar.herokuapp.com/?id=${i}-ld38-mjt&s=${sex}&size=64"
+done
