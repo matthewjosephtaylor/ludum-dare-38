@@ -2,7 +2,9 @@
 
 A game about helping friends meet! 
 
-I wrote this over the a weekend for [Ludum Dare 38](https://ldjam.com/events/ludum-dare/38)
+I wrote this over a weekend for [Ludum Dare 38](https://ldjam.com/events/ludum-dare/38)
+
+The contest rules are that you have to start from scratch and you have 48 hrs to complete.
 
 ## Playing
 
