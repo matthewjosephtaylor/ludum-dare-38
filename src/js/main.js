@@ -6,6 +6,8 @@ import {
 	createBlockPaletteB,
 } from './game';
 
+import * as PIXI from 'pixi.js';
+
 var app = new PIXI.Application(1920, 1080, {
 	backgroundColor: 0xFFFFFF
 });
@@ -40,7 +42,7 @@ for (var i = 0; i < 1; i++) {
 	app.stage.addChild(createBlockGroup(0, 0, numBlocks + 1, blockPallet, true));
 
 	for (let j = 0; j < 10; j++) {
-		app.stage.addChild(createBlockGroup(0, 0, numBlocks, blockPallet));
+		app.stage.addChild(createBlockGroup(0, 0, numBlocks, blockPallet, false));
 	}
 
 	// app.stage.addChild(createBlockGroup(0, 0, numBlocks + 1, blockPallet, 0x000000));

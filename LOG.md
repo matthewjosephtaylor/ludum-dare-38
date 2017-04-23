@@ -1,4 +1,18 @@
 #LOG
+2017-04-23T10:29:58-05:00
+- Forced to move to yarn version of pixi.js from CDN to easily obtain plugin code. 
+
+2017-04-23T10:10:10-05:00
+- Nothing more fun than example code that assumes you have a 'plugin' for the library you are trying to learn installed but never tells you.
+
+
+2017-04-23T09:41:45-05:00
+- home stretch.
+- starting off a bit rough, just getting back into the same motions
+	- literally, I didn't hit 'shift-refresh' to clear cache and spent a few minutes wondering why my changes weren't being applied.
+
+
+
 2017-04-22T22:56:38-05:00
 - Going to call it a night.
 - I think the basic mechanics of the game are now worked out in my mind.

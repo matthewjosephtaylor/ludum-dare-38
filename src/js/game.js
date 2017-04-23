@@ -4,6 +4,7 @@ import {
 } from './ui';
 import xs from 'xstream';
 
+import * as PIXI from 'pixi.js';
 
 // // create a texture from an image path
 const blockHeight = 64;
@@ -53,52 +54,41 @@ export function createBlockPaletteB(size) {
 	return result;
 }
 
+export function createSpriteBlock(x, y, blockValue, isGoalBlock) {
+
+	//TODO MJT do something special for goalBlock;
+	let blockTexture = PIXI.Texture.fromImage("img/64/" + blockValue + ".png");
+	let block = new PIXI.Sprite(blockTexture);
+	block['blockValue'] = blockValue;
+
+	// block.interactive = true;
+	// block.buttonMode = true;
+	// block.anchor.set(0.5);
+	if (isGoalBlock) {
+		block.scale.set(1.1);
+	}
+
+	block.x = x;
+	block.y = y;
+	return block;
+}
+
 // goalBlock is optional
 export function createBlockGroup(x, y, size, blockPalette, goalBlock) {
 	let blockGroup = new PIXI.Container();
 	for (let i = 0; i < size; i++) {
 		let blockValue = Math.floor(Math.random() * blockPalette);
-		blockGroup.addChild(createSpriteBlock((i * blockWidth), y, blockValue, goalBlock));
+		// if (goalBlock && (i == Math.floor(size / 2))) {
+		if ((i == Math.floor(size / 2))) {
+			blockGroup.addChild(createSpriteBlock((i * blockWidth), y, blockValue, true));
+		} else {
+			blockGroup.addChild(createSpriteBlock((i * blockWidth), y, blockValue, false));
+		}
 	}
 	dragify(blockGroup);
 	blockGroup.x = x;
 	blockGroup.y = y;
 	return blockGroup;
-}
-
-//// goalBlock is optional
-// export function createBlockGroup(x, y, size, blockPalette, goalBlock) {
-// 	let blockGroup = new PIXI.Container();
-// 	for (let i = 0; i < size; i++) {
-// 		let blockValue;
-// 		if ((typeof goalBlock != 'undefined') && (i == Math.floor(size / 2))) {
-// 			blockValue = goalBlock;
-// 		} else {
-// 			blockValue = blockPalette[Math.floor(Math.random() * blockPalette.length)];
-// 		}
-// 		blockGroup.addChild(createSpriteBlock((i * blockWidth), y, blockValue));
-// 		// blockGroup.addChild(createGraphicsBlock((i * blockWidth), y, blockValue));
-// 		// blockGroup.addChild(createTextBlock((i * blockWidth), y, blockValue));
-// 	}
-// 	dragify(blockGroup);
-// 	blockGroup.x = x;
-// 	blockGroup.y = y;
-// 	return blockGroup;
-// }
-
-export function createTextBlock(x, y, blockValue) {
-	let colorValue = PIXI.utils.hex2string(blockValue);
-	let basicText = new PIXI.Text(colorValue, {
-		fontFamily: 'Arial',
-		fontSize: 24,
-		fill: blockValue,
-		align: 'center'
-	});
-	// let basicText = new PIXI.Text(colorValue);
-	basicText.x = x;
-	basicText.y = y;
-	return basicText;
-
 }
 
 export function createGraphicsBlock(x, y, blockValue) {
@@ -126,29 +116,38 @@ export function createGraphicsBlock(x, y, blockValue) {
 
 
 
-export function createSpriteBlock(x, y, blockValue, goalBlock) {
+//// goalBlock is optional
+// export function createBlockGroup(x, y, size, blockPalette, goalBlock) {
+// 	let blockGroup = new PIXI.Container();
+// 	for (let i = 0; i < size; i++) {
+// 		let blockValue;
+// 		if ((typeof goalBlock != 'undefined') && (i == Math.floor(size / 2))) {
+// 			blockValue = goalBlock;
+// 		} else {
+// 			blockValue = blockPalette[Math.floor(Math.random() * blockPalette.length)];
+// 		}
+// 		blockGroup.addChild(createSpriteBlock((i * blockWidth), y, blockValue));
+// 		// blockGroup.addChild(createGraphicsBlock((i * blockWidth), y, blockValue));
+// 		// blockGroup.addChild(createTextBlock((i * blockWidth), y, blockValue));
+// 	}
+// 	dragify(blockGroup);
+// 	blockGroup.x = x;
+// 	blockGroup.y = y;
+// 	return blockGroup;
+// }
 
-//TODO MJT do something special for goalBlock;
-	let blockTexture = PIXI.Texture.fromImage("img/64/" + blockValue + ".png");
-	let block = new PIXI.Sprite(blockTexture);
-	block['blockValue'] = blockValue;
 
-	// // enable the block to be interactive... this will allow it to respond to mouse and touch events
-	// block.interactive = true;
+export function createTextBlock(x, y, blockValue) {
+	let colorValue = PIXI.utils.hex2string(blockValue);
+	let basicText = new PIXI.Text(colorValue, {
+		fontFamily: 'Arial',
+		fontSize: 24,
+		fill: blockValue,
+		align: 'center'
+	});
+	// let basicText = new PIXI.Text(colorValue);
+	basicText.x = x;
+	basicText.y = y;
+	return basicText;
 
-	// // this button mode will mean the hand cursor appears when you roll over the block with your mouse
-	// block.buttonMode = true;
-
-	// // center the block's anchor point
-	// block.anchor.set(0.5);
-
-	// make it a bit bigger, so it's easier to grab
-	// block.scale.set(3);
-
-	// dragify(block);
-
-	// move the sprite to its designated position
-	block.x = x;
-	block.y = y;
-	return block;
 }
