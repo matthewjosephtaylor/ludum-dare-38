@@ -2,7 +2,6 @@
 import {
 	dragify
 } from './ui';
-import xs from 'xstream';
 
 import * as PIXI from 'pixi.js';
 
@@ -11,10 +10,6 @@ const blockHeight = 64;
 const blockWidth = 64;
 const goalBlockValue = 0x000000;
 
-
-// // Scale mode for pixelation
-// TODO MJT needed?
-// blockTexture.baseTexture.scaleMode = PIXI.SCALE_MODES.NEAREST;
 
 export function createBlockPalette(size) {
 	let result = [];
@@ -113,28 +108,6 @@ export function createGraphicsBlock(x, y, blockValue) {
 	block.y = y;
 	return block;
 }
-
-
-
-//// goalBlock is optional
-// export function createBlockGroup(x, y, size, blockPalette, goalBlock) {
-// 	let blockGroup = new PIXI.Container();
-// 	for (let i = 0; i < size; i++) {
-// 		let blockValue;
-// 		if ((typeof goalBlock != 'undefined') && (i == Math.floor(size / 2))) {
-// 			blockValue = goalBlock;
-// 		} else {
-// 			blockValue = blockPalette[Math.floor(Math.random() * blockPalette.length)];
-// 		}
-// 		blockGroup.addChild(createSpriteBlock((i * blockWidth), y, blockValue));
-// 		// blockGroup.addChild(createGraphicsBlock((i * blockWidth), y, blockValue));
-// 		// blockGroup.addChild(createTextBlock((i * blockWidth), y, blockValue));
-// 	}
-// 	dragify(blockGroup);
-// 	blockGroup.x = x;
-// 	blockGroup.y = y;
-// 	return blockGroup;
-// }
 
 
 export function createTextBlock(x, y, blockValue) {
