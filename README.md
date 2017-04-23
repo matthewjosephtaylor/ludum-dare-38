@@ -4,7 +4,24 @@ A game about helping friends meet!
 
 I wrote this over the a weekend for [Ludum Dare 38](https://ldjam.com/events/ludum-dare/38)
 
- 
+## Building
+
+Prerequisites
+- docker
+- some unix-like OS (I use mac)
+
+To build just checkout this repository run the command:
+
+```
+./build
+```
+
+Docker is so that you don't to have various node/webpack etc dependencies. However, if you _do_ have those things installed odds are that this project will build via a simple `webpack` command.
+
+Images are generated 'by hand' via the `get-avatars` command in the [utils](./utils) folder and copying them over into `src/img/64`. I'm using the work of a most excellent [avatar-generator](https://github.com/arusanov/avatar-generator) for these lovely little avatars. 
+
+
+
 ## Installation
 
 TBD (TODO redirect to live website) 
@@ -22,8 +39,11 @@ TBD (TODO redirect to live website)
  
 ## Credits
 
-Matt Taylor [@matt_taylor](https://twitter.com/matt_taylor)
+Lovingly coded by Matt Taylor [@matt_taylor](https://twitter.com/matt_taylor)
 
+Avatars generated via: https://github.com/arusanov/avatar-generator
+
+Graphics Enigine is [Pixi.js](http://www.pixijs.com/)
 
 ## License
  
