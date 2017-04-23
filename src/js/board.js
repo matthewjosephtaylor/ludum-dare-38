@@ -17,21 +17,41 @@ export function init(populationSize, friendGroupSize) {
 		backgroundColor: 0xFFFFFF
 	});
 	document.body.appendChild(app.view);
-	document.getElementById("mainButton").onclick = testButton(app);
+	document.getElementById("retryButton").onclick = () => reload(app, populationSize, friendGroupSize);
+	reload(app, populationSize, friendGroupSize);
+
+	// document.getElementById("moveLeftButton").onclick = moveRow(pickTable, targetTable, -2, true, testWin);
+	// document.getElementById("moveRightButton").onclick = moveRow(targetTable, pickTable, 0, false, testWin);
+}
+
+function reload(app) {
+	let populationSize = document.getElementById("populationSize").value;
+	if (populationSize > 64) {
+		populationSize = 64;
+		document.getElementById("populationSize").value=populationSize;
+	}
+	let friendGroupSize = document.getElementById("friendGroupSize").value;
+	if (friendGroupSize> 7) {
+		friendGroupSize= 7;
+		document.getElementById("friendGroupSize").value=friendGroupSize;
+	}
+	app.stage.removeChildren();
 	let targetTable = createTargetTable(app, 50, 50, populationSize, friendGroupSize);
 	app.stage.addChild(targetTable);
 	let pickTable = createPickTable(app, 500, 50, populationSize, friendGroupSize);
 	app.stage.addChild(pickTable);
 	let testWin = () => {
 		if (isComplete(targetTable)) {
+			removeBlankRow(targetTable);
 			winner(app);
 		}
 	};
 	targetTable.autoMoveRows = autoMoveRows(pickTable, targetTable, testWin);
 	pickTable.autoMoveRows = autoMoveRows(pickTable, targetTable, testWin);
+}
 
-	document.getElementById("moveLeftButton").onclick = moveRow(pickTable, targetTable, -2, true, testWin);
-	document.getElementById("moveRightButton").onclick = moveRow(targetTable, pickTable, 0, false, testWin);
+function removeBlankRow(table) {
+	table.children.filter(c => c.children.length <= 0).forEach(c => table.removeChild(c));
 }
 
 function autoMoveRows(pickTable, targetTable, testWin) {
@@ -42,7 +62,7 @@ function autoMoveRows(pickTable, targetTable, testWin) {
 }
 
 function winner(app) {
-	let basicText = new PIXI.Text("WINNER!!!", {
+	let basicText = new PIXI.Text("The friends meet YOU WIN!!!", {
 		fontFamily: 'Arial',
 		fontSize: 24,
 		fill: 0xFF0000,
@@ -51,12 +71,6 @@ function winner(app) {
 	basicText.x = 500;
 	basicText.y = 0;
 	app.stage.addChild(basicText);
-}
-
-function testButton(app) {
-	return function () {
-		app.stage.children.forEach(c => c.compact());
-	};
 }
 
 function moveRow(source, target, targetIndex, shouldTestForConnection, testWinFunction) {

@@ -2,8 +2,6 @@
 
 <head>
 
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/4.5.1/pixi.js" integrity="sha256-sXhMNFS+6amGptw21Ywi6BLBYYopZ9YeeF+/5OCsEn8="
-	    crossorigin="anonymous"></script>-->
 	<style>
 		body {
 			margin: 0;
@@ -16,10 +14,12 @@
 </head>
 
 <body>
-	<h1>Ludum Dare 38 Game</h1>
-	<button id=mainButton>Do IT!</button>
-	<button id=moveLeftButton><<<</button>
-	<button id=moveRightButton>>>></button>
+	<h1 align="center">Friender</h1>
+	<h5 align="center">Help the two groups on the left meet by linking together mutual friends.</h5>
+	<div>Friend Group Size (max 7): <input type="number" maxlength="2" size="2" value="4" id=friendGroupSize></div>
+	<div>Total population Size (max 64): <input type="number" maxlength="2" size="2" value="16" id=populationSize>
+		<button align="center" id=retryButton>Play Gain</button>
+	</div>
 	<script src="main.bundle.js"></script>
 </body>
 
