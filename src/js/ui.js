@@ -1,7 +1,6 @@
 // UI module
 
-// import {PIXI} from 'pixi.js';
-// import {DisplayGroup} from 'pixi-display';
+import * as PIXI from 'pixi.js';
 
 export function dragify(object) {
 	// console.log('dragifying', object);
@@ -22,15 +21,11 @@ export function dragify(object) {
 		.on('pointerupoutside', onDragEnd)
 		.on('pointermove', onDragMove);
 }
-// var dragLayer = new DisplayGroup(2, false);
 
 function onDragStart(event) {
     if (!this.dragging) {
         this.data = event.data;
-        this.oldGroup = this.displayGroup;
-        this.displayGroup = dragLayer;
         this.dragging = true;
-
         this.scale.x *= 1.1;
         this.scale.y *= 1.1;
         this.dragPoint = event.data.getLocalPosition(this.parent);
@@ -42,7 +37,7 @@ function onDragStart(event) {
 function onDragEnd() {
     if (this.dragging) {
         this.dragging = false;
-        this.displayGroup = this.oldGroup;
+        // this.displayGroup = this.oldGroup;
         this.scale.x /= 1.1;
         this.scale.y /= 1.1;
         // set the interaction data to null
@@ -57,60 +52,3 @@ function onDragMove() {
         this.y = newPosition.y - this.dragPoint.y;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function onDragStart(event) {
-// 	// store a reference to the data
-// 	// the reason for this is because of multitouch
-// 	// we want to track the movement of this particular touch
-// 	this.data = event.data;
-// 	// this.alpha = 0.5;
-// 	// this.scale.set(2);
-// 	this.dragging = true;
-// }
-
-// function onDragEnd() {
-// 	// this.alpha = 1;
-// 	// this.scale.set(1);
-// 	this.dragging = false;
-// 	// set the interaction data to null
-// 	this.data = null;
-// }
-
-// function onDragMove() {
-// 	if (this.dragging) {
-// 		var newPosition = this.data.getLocalPosition(this.parent);
-// 		// var newPosition = event.data.getLocalPosition(this.parent);
-// 		// console.log("--------------------------");
-// 		// console.log('this', this);
-// 		// console.log('this.data', this.data);
-// 		// console.log('this.parent', this.parent);
-// 		// console.log('newPosition', newPosition);
-// 		// console.log('event', event);
-// 		// console.log('this.parent.x', this.parent.x);
-// 		// console.log('this.parent.y', this.parent.y);
-// 		// console.log('this.x', this.x);
-// 		// console.log('this.y', this.y);
-// 		// console.log("--------------------------");
-
-// 		this.x = newPosition.x;
-// 		this.y = newPosition.y;
-// 	}
-// }
