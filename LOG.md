@@ -1,5 +1,9 @@
 #LOG
 
+2017-04-23T12:11:51-05:00
+- getting bogged down in the details of creating a UI...surely there is a better way...
+	- It might be that drag-n-drop goes away...
+
 2017-04-23T11:31:33-05:00
 - Reorganizing code to think about it more clearly
 

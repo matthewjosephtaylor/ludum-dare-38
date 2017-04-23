@@ -2,7 +2,11 @@
 
 import {
 	dragify
-} from './ui';
+} from './ui-drag';
+
+import {
+	selectify
+} from './ui-select';
 
 import * as PIXI from 'pixi.js';
 
@@ -31,6 +35,36 @@ export function createSpriteBlock(x, y, blockValue, isGoalBlock) {
 	return block;
 }
 
+function selectAction(object) {
+	return function () {
+		console.log("selecting:", object);
+		object.selected = true;
+		object.parent.children.forEach(c => {
+			dropShadow(c);
+		});
+		addShadow(object);
+	};
+}
+
+function addShadow(obj) {
+	var gr = new PIXI.Graphics();
+	gr.beginFill(0xAAAAAA, 0.5);
+	gr.drawRect(-2, -2, (64 * obj.children.length) + 4, 64 + 4);
+	gr.endFill();
+	gr.shadow = true;
+	obj.addChild(gr);
+}
+
+function dropShadow(obj) {
+	obj.children.forEach(c => {
+		if (c.shadow) {
+			obj.removeChild(c);
+		}
+	});
+}
+
+
+
 // goalBlock is optional
 export function createBlockGroup(x, y, size, blockPalette, goalBlock) {
 	let blockGroup = new PIXI.Container();
@@ -43,7 +77,9 @@ export function createBlockGroup(x, y, size, blockPalette, goalBlock) {
 			blockGroup.addChild(createSpriteBlock((i * blockWidth), y, blockValue, false));
 		}
 	}
-	dragify(blockGroup);
+	// dragify(blockGroup);
+	selectify(blockGroup);
+	blockGroup.select = selectAction(blockGroup);
 	blockGroup.x = x;
 	blockGroup.y = y;
 	return blockGroup;
