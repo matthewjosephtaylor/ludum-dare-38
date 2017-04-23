@@ -8,6 +8,9 @@ I wrote this over the a weekend for [Ludum Dare 38](https://ldjam.com/events/lud
 
 Play [online](https://matthewjosephtaylor.github.io/ludum-dare-38/)
 
+![friender screenshot](./marketing/friender-640.png)
+
+
 ## Building
 
 Prerequisites

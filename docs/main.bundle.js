@@ -20100,8 +20100,13 @@ function getBlockValues(object) {
 
 function createBlockGroup(x, y, size, blockPalette, selectable) {
 	var blockGroup = new PIXI.Container();
+	var previousValues = [];
 	for (var i = 0; i < size; i++) {
 		var blockValue = Math.floor(Math.random() * blockPalette);
+		// There are better ways but this works well enough for now.
+		while (previousValues.indexOf(blockValue) != -1) {
+			blockValue = Math.floor(Math.random() * blockPalette);
+		}
 		// if (goalBlock && (i == Math.floor(size / 2))) {
 		if (i == Math.floor(size / 2)) {
 			blockGroup.addChild(createSpriteBlock(i * CONST.BLOCK_WIDTH, y, blockValue, true));
