@@ -1,4 +1,10 @@
-#LOG
+# LOG
+
+2017-04-23T18:02:49-05:00
+- Website hosted via github!
+- Almost two hours of time left for polishing.
+	- feels good to know that I will have 'something' finished, and can really only go forward from here.
+
 2017-04-23T17:27:57-05:00
 - time for major coding over.
 - Game works.

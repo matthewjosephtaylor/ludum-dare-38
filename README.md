@@ -4,6 +4,10 @@ A game about helping friends meet!
 
 I wrote this over the a weekend for [Ludum Dare 38](https://ldjam.com/events/ludum-dare/38)
 
+## Playing
+
+Play [online](https://matthewjosephtaylor.github.io/ludum-dare-38/)
+
 ## Building
 
 Prerequisites
@@ -35,13 +39,14 @@ TBD (TODO redirect to live website)
 5. Submit a pull request :D
  
 ## History
- 
+
+See the [Log](./LOG.md)
  
 ## Credits
 
 Lovingly coded by Matt Taylor [@matt_taylor](https://twitter.com/matt_taylor)
 
-Avatars generated via: https://github.com/arusanov/avatar-generator
+Avatars generated via: [avatar-generator](https://github.com/arusanov/avatar-generator) 
 
 Graphics Enigine is [Pixi.js](http://www.pixijs.com/)
 
