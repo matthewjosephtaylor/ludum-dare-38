@@ -1,4 +1,8 @@
 #LOG
+
+2017-04-23T11:31:33-05:00
+- Reorganizing code to think about it more clearly
+
 2017-04-23T10:29:58-05:00
 - Forced to move to yarn version of pixi.js from CDN to easily obtain plugin code. 
 

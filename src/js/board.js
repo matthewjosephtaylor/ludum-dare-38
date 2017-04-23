@@ -1,7 +1,7 @@
 // game board
 import * as PIXI from 'pixi.js';
 
-import {createBlockGroup} from './game';
+import {createBlockGroup} from './block';
 
 function reorderBlockGroups(app, groupASize) {
 	let groupA = 0;
