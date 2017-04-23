@@ -1,35 +1,57 @@
 // UI module
 
 import * as PIXI from 'pixi.js';
+import * as CONST from './game-const';
 
-export function selectify(object) {
+export function selectify(object, selectable) {
 	object.interactive = true;
-
 	object.buttonMode = true;
+	object.on('pointerdown', onClick);
 
-	object
-		.on('pointerdown', onClick)
+	object.select = select(object);
+	object.unselect = unselect(object);
+	object.selectable = selectable;
+	object.selected = false;
 }
 
 function onClick(event) {
     this.select();
 }
 
-function onDragEnd() {
-    if (this.dragging) {
-        this.dragging = false;
-        // this.displayGroup = this.oldGroup;
-        this.scale.x /= 1.1;
-        this.scale.y /= 1.1;
-        // set the interaction data to null
-        this.data = null;
-    }
+
+function select(object) {
+	return function () {
+		if(!object.selectable) {
+			return;
+		}
+		object.parent.children.forEach(c => {
+			c.unselect();
+		});
+		object.selected = true;
+		addShadow(object);
+	};
 }
 
-function onDragMove() {
-    if (this.dragging) {
-        var newPosition = this.data.getLocalPosition(this.parent);
-        this.x = newPosition.x - this.dragPoint.x;
-        this.y = newPosition.y - this.dragPoint.y;
-    }
+function unselect(object) {
+	return function () {
+		object.selected = false;
+		removeShadow(object);
+	};
+}
+
+function addShadow(obj) {
+	var gr = new PIXI.Graphics();
+	gr.beginFill(0xAAAAAA, 0.5);
+	gr.drawRect(-2, -2, (CONST.BLOCK_WIDTH * obj.children.length) + 4, CONST.BLOCK_HEIGHT + 4);
+	gr.endFill();
+	gr.shadow = true;
+	obj.addChild(gr);
+}
+
+function removeShadow(obj) {
+	obj.children.forEach(c => {
+		if (c.shadow) {
+			obj.removeChild(c);
+		}
+	});
 }

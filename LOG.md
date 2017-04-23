@@ -1,4 +1,10 @@
 #LOG
+2017-04-23T15:17:57-05:00
+- Game is functional!
+- Now it is going to be all about polish as we head into the home stretch...
+
+2017-04-23T13:02:34-05:00
+- We can now select and move rows back and forth!
 
 2017-04-23T12:11:51-05:00
 - getting bogged down in the details of creating a UI...surely there is a better way...

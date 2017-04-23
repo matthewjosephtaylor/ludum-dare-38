@@ -2,7 +2,7 @@ import {
 	init
 } from './board';
 
-init();
+init(16, 5);
 
 
 // All the copy file stuff
