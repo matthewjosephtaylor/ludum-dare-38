@@ -1,4 +1,10 @@
 #LOG
+2017-04-23T17:27:57-05:00
+- time for major coding over.
+- Game works.
+	- is not nearly as polished as I would hope for but I finished it and it is playable! :)
+- Now just need to get it hosted, then will worry about final tweaks.
+
 2017-04-23T16:20:31-05:00
 - crisis averted wrt the automove select.
 - really feeling a bit of time pressure, but in a fun way :)
