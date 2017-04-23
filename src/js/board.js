@@ -27,9 +27,18 @@ export function init(populationSize, friendGroupSize) {
 			winner(app);
 		}
 	};
+	targetTable.autoMoveRows = autoMoveRows(pickTable, targetTable, testWin);
+	pickTable.autoMoveRows = autoMoveRows(pickTable, targetTable, testWin);
 
 	document.getElementById("moveLeftButton").onclick = moveRow(pickTable, targetTable, -2, true, testWin);
 	document.getElementById("moveRightButton").onclick = moveRow(targetTable, pickTable, 0, false, testWin);
+}
+
+function autoMoveRows(pickTable, targetTable, testWin) {
+	return function () {
+		moveRow(pickTable, targetTable, -2, true, testWin)();
+		moveRow(targetTable, pickTable, 0, false, testWin)();
+	};
 }
 
 function winner(app) {
@@ -65,7 +74,7 @@ function moveRow(source, target, targetIndex, shouldTestForConnection, testWinFu
 						source.removeChild(c);
 						target.addChildAt(c, idx);
 					} else {
-						console.log("no soup for you!");
+						// console.log("no soup for you!");
 					}
 				} else {
 					source.removeChild(c);

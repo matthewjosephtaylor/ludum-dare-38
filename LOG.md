@@ -1,4 +1,11 @@
 #LOG
+2017-04-23T16:20:31-05:00
+- crisis averted wrt the automove select.
+- really feeling a bit of time pressure, but in a fun way :)
+
+2017-04-23T16:02:40-05:00
+- Had to do a hard reset while messing with the automove select functionality. No errors, game objects seemed to exist but nothing on scree. Total nightmare.
+
 2017-04-23T15:17:57-05:00
 - Game is functional!
 - Now it is going to be all about polish as we head into the home stretch...

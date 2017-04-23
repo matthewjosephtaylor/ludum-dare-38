@@ -15,13 +15,13 @@ export function selectify(object, selectable) {
 }
 
 function onClick(event) {
-    this.select();
+	this.select();
 }
 
 
 function select(object) {
 	return function () {
-		if(!object.selectable) {
+		if (!object.selectable) {
 			return;
 		}
 		object.parent.children.forEach(c => {
@@ -29,6 +29,9 @@ function select(object) {
 		});
 		object.selected = true;
 		addShadow(object);
+		if (object.parent.autoMoveRows) {
+			object.parent.autoMoveRows();
+		}
 	};
 }
 

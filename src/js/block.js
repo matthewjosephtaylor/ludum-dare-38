@@ -28,7 +28,6 @@ export function createSpriteBlock(x, y, blockValue, isGoalBlock) {
 
 function getBlockValues(object) {
 	return function () {
-		console.log("getBlockValues for", object);
 		let result = [];
 		object.children.forEach(c => {
 			result.push(c.blockValue);

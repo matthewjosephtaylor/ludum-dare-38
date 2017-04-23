@@ -7,7 +7,6 @@ export function hasConnection(groupA, groupB) {
 }
 
 export function isComplete(table) {
-	console.log("TESTING COMPLETENESS OF", table);
 	//filter out the spacer
 	let blockGroups = table.children.filter((bg) => bg.getBlockValues().length > 0);
 
