@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
+echo "building...."
+
 rm -rf ./dist/*
 . .env
-echo "building...."
 webpack
+
 if [ $? -ne 0 ]; then
         echo "build blew up!"
         # osascript -e "display alert \"Build Error\" message \"Something bad :( \""

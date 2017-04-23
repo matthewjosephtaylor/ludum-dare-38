@@ -1,44 +1,12 @@
 // game board
 import * as PIXI from 'pixi.js';
 
-import {createBlockGroup} from './block';
-
-function reorderBlockGroups(app, groupASize) {
-	let groupA = 0;
-	let groupB = 0;
-	app.stage.children.forEach(function (child) {
-		if (child.children.length == groupASize) {
-			child.x = 50;
-			child.y = 50 + groupA;
-			groupA += 72;
-		} else {
-			child.x = 500;
-			child.y = 50 + groupB;
-			groupB += 72;
-		}
-	});
-}
-
-function testButton(app) {
-	return function () {
-		reorderBlockGroups(app, 4);
-	};
-}
-
-function createBlockGroups(app) {
-
-	let blockPallet = 64;
-	let numBlocks = 3;
-
-	app.stage.addChild(createBlockGroup(0, 0, numBlocks + 1, blockPallet, true));
-	app.stage.addChild(createBlockGroup(0, 0, numBlocks + 1, blockPallet, true));
-
-	for (let j = 0; j < 10; j++) {
-		app.stage.addChild(createBlockGroup(0, 0, numBlocks, blockPallet, false));
-	}
-
-	reorderBlockGroups(app, numBlocks + 1);
-}
+import {
+	createBlockGroup
+} from './block';
+import {
+	createTable
+} from './table';
 
 export function init() {
 	let app = new PIXI.Application(1920, 1080, {
@@ -46,5 +14,38 @@ export function init() {
 	});
 	document.body.appendChild(app.view);
 	document.getElementById("mainButton").onclick = testButton(app);
-	createBlockGroups(app);
+	createTargetTable(app, 50, 50);
+	createPickTable(app, 500, 50);
+}
+
+function testButton(app) {
+	return function () {
+		app.stage.children.forEach(c => c.compact());
+		// reorderBlockGroups(app, 4);
+	};
+}
+
+function createTargetTable(app, x, y) {
+	let table = createTable();
+	let blockPallet = 64;
+	let numBlocks = 3;
+	table.addChild(createBlockGroup(0, 0, numBlocks + 1, blockPallet, true));
+	table.addChild(createBlockGroup(0, 0, numBlocks + 1, blockPallet, true));
+	table.compact();
+	table.x = x;
+	table.y = y;
+	app.stage.addChild(table);
+}
+
+function createPickTable(app, x, y) {
+	let table = createTable();
+	let blockPallet = 64;
+	let numBlocks = 3;
+	for (let i = 0; i < 10; i++) {
+		table.addChild(createBlockGroup(0, 0, numBlocks, blockPallet, false));
+	}
+	table.compact();
+	table.x = x;
+	table.y = y;
+	app.stage.addChild(table);
 }

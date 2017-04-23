@@ -1,7 +1,7 @@
 {
     "esversion": 6,
     "curly": true,
-    "latedef": true,
+    "latedef": "nofunc",
     "unused": true
 
 }
