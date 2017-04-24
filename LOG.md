@@ -1,5 +1,13 @@
 # LOG
 
+2017-04-23T18:57:24-05:00
+- Updated the Ludum Dare Game page for this game.
+	- _really_ confusing. Nothing is on the line so not going to care too much but hopefully next time will be smoother (seem to be migrating to a new website and things seem to be being coded last minute (in true ludum dare fashion no doubt :) ).
+- I was thinking about doing more polishing but I think I'll leave it as is. It needs more work than an hour of love will help with.
+- Overall I'm mostly pleased just with having the game 'finished'. I'd probably start over if I was going to make this a commercial product, but I think as a proof of concept/prototype level of game this turned out pretty well, and obviously the time constraints dictate the quality here.
+	- Learned the limited nature of pixi.js (good for what it is but don't expect too much).
+	- I now have a good webpack/yarn javascript setup I can build on (really disappointed in how hard that was to get going but I've climbed the hill (lessens learned around that will probably be the best take-away from this experience))
+
 2017-04-23T18:02:49-05:00
 - Website hosted via github!
 - Almost two hours of time left for polishing.
