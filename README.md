@@ -45,7 +45,10 @@ TBD (TODO redirect to live website)
  
 ## History
 
-See the [Log](./LOG.md)
+See the blow by blow [Coding Log](./LOG.md)
+
+### From start to finished product:
+![progression](./marketing/progression/game-progression.gif)
  
 ## Credits
 
